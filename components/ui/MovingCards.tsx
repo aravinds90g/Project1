@@ -11,9 +11,8 @@ export const InfiniteMovingCards = ({
   className,
 }: {
   items: {
-    quote: string;
+    id: Number;
     name: string;
-    title: string;
   }[];
   direction?: "left" | "right";
   speed?: "fast" | "normal" | "slow";
@@ -87,14 +86,14 @@ export const InfiniteMovingCards = ({
       >
         {items.map((item, idx) => (
           <li
-            className=" relative rounded-2xl sm:w-[20rem] md:w-[30rem] w-[30rem] lg:w-[35rem] border border-b-0 flex-shrink-0 border-slate-700 px-8  py-6 "
+            className=" relative rounded-2xl sm:w-[20rem] md:w-[30rem] w-[30rem] lg:w-[25rem] border border-b-0 flex-shrink-0 border-slate-700 px-8  py-6 "
             style={{
               background:
-                "linear-gradient(180deg, var(--slate-800), var(--slate-900)",
+                "linear-gradient(180deg, var(--slate-800), var(--slate-200)",
             }}
-            key={item.name}
+            key={idx}
           >
-            <blockquote>
+            {/* <blockquote>
               <div
                 aria-hidden="true"
                 className="user-select-none -z-1 pointer-events-none absolute -left-0.5 -top-0.5 h-[calc(100%_+_4px)] w-[calc(100%_+_4px)]"
@@ -116,9 +115,14 @@ export const InfiniteMovingCards = ({
 
                 </span>
               </div>
-            </blockquote>
+            </blockquote> */}
+
+            <div className="justify-center flex items-center">
+              <img src={item.name} alt="/" />
+            </div>
           </li>
         ))}
+        
       </ul>
     </div>
   );

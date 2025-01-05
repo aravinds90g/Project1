@@ -67,7 +67,7 @@ const handleCopy = () => {
      >
        <div
          className={`${id === 3 ? "flex justify-center" : ""} ${
-           id === 6 && "text-center justify-center"
+           id === 6 && "text-center justify-center items-center"
          } justify-center`}
        >
          <div className="w-full h-full absolute">
@@ -110,11 +110,12 @@ const handleCopy = () => {
              {description}
            </div>
            <div
-             className={`font-sans hover:text-purple w-full text-gray-400 font-bold ${
+             className={`font-sans hover:text-purple w-full ${
+               id === 6 ? `lg:text-1xl  text-white  font-bold` : ""
+             } text-gray-400 font-bold ${
                id === 1 ? `lg:text-1xl text-gray-400 font-semibold ` : ""
-             } ${id === 2 ? `lg:text-1xl  font-semibold` : ""} ${
-               id === 6 ? `lg:text-1xl text-gray-100  font-semibold` : ""
-             } lg:text-3xl max-w-96 z-10`}
+             } ${id === 2 ? `lg:text-1xl  font-semibold` : ""} 
+              lg:text-3xl max-w-96 z-10`}
            >
              {title}
            </div>

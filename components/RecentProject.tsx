@@ -18,10 +18,10 @@ const RecentProject = () => {
   return (
     <>
       {/* <BackgroundBeams  className='mt-96'/> */}
-      <div className="py-20" id="projects">
+      <div  className="py-20" id="projects">
         <h1 className="text-6xl text-center font-semibold">
-          A Small Select Of {""}
-          <span className="text-purple">Recent Porjects</span>
+          A Snapshot of {""}
+          <span className="text-purple">My Latest Work</span>
         </h1>
         <div className="flex  flex-wrap items-center justify-center p-7 gap-x-52 gap-y-10  gap-16 mt-32">
           {projects.map(({ id, title, des, img, iconLists, link }) => (

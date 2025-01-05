@@ -1,4 +1,4 @@
-import { style } from "framer-motion/client";
+import { i, style, svg } from "framer-motion/client";
 
 export const navItems = [
   { name: "About", link: "#about" },
@@ -95,19 +95,19 @@ export const gridItems = [
 export const projects = [
   {
     id: 1,
-    title: "3D Solar System Planets to Explore",
-    des: "Explore the wonders of our solar system with this captivating 3D simulation of the planets using Three.js.",
-    img: "/p1.svg",
-    iconLists: ["/re.svg", "/tail.svg", "/ts.svg", "/three.svg", "/fm.svg"],
-    link: "https://github.com/adrianhajdin?tab=repositories",
+    title: "ChatBot",
+    des: "An intelligent chatbot website with seamless user interaction, built using the MERN stack for real-time communication and advanced functionality.",
+    img: "img4.png",
+    iconLists: ["/next.svg", "/tail.svg", "/ts.svg", "/py.svg"],
+    link: "https://github.com/aravinds90g/ChatBot",
   },
   {
     id: 2,
     title: "Yoom - Video Conferencing App",
-    des: "Simplify your video conferencing experience with Yoom. Seamlessly connect with colleagues and friends.",
-    img: "/p2.svg",
-    iconLists: ["/next.svg", "/tail.svg", "/ts.svg", "/stream.svg", "/c.svg"],
-    link: "https://github.com/adrianhajdin/zoom-clone",
+    des: "A React Native project for building cross-platform mobile applications with seamless UI, robust features, and performant functionality.",
+    img: "/img5.png",
+    iconLists: ["/re.svg", "/tail.svg", "/ts.svg", "/Appwrite1.svg"],
+    link: "https://github.com/aravinds90g/app",
   },
 ];
 
@@ -115,114 +115,147 @@ export const projects = [
 export const Project3d = [
   {
     id: 1,
-    title: "AI Image SaaS - Canva Application",
-    des: "A REAL Software-as-a-Service app with AI features and a payments and credits system using the latest tech stack.",
-    img: "/p3.svg",
-    iconLists: ["/re.svg", "/tail.svg", "/ts.svg", "/three.svg", "/c.svg"],
-    link: "https://github.com/adrianhajdin/ai_saas_app",
+    title: "Mini-Amazon: E-Commerce Platform",
+    des: "A MERN stack e-commerce app with user authentication, product browsing, cart management, and secure checkout.",
+    img: "/project1.png",
+    iconLists: ["/re.svg", "/Nodejs.svg", "/Bootstrap.svg", "/Mongodb.svg"],
+    link: "https://github.com/aravinds90g/mini-amazon",
   },
   {
     id: 2,
     title: "Animated Apple Iphone 3D Website",
     des: "Recreated the Apple iPhone 15 Pro website, combining GSAP animations and Three.js 3D effects..",
-    img: "/p4.svg",
-    iconLists: ["/next.svg", "/tail.svg", "/ts.svg", "/three.svg", "/gsap.svg"],
-    link: "https://github.com/adrianhajdin/iphone",
+    img: "/project2.png",
+    iconLists: ["/next.svg", "/tail.svg", "/three.svg", "/gsap.svg"],
+    link: "https://github.com/aravinds90g/applewebsite",
   },
 ];
 
-export const testimonials = [
-  {
-    quote:
-      "Collaborating with Adrian was an absolute pleasure. His professionalism, promptness, and dedication to delivering exceptional results were evident throughout our project. Adrian's enthusiasm for every facet of development truly stands out. If you're seeking to elevate your website and elevate your brand, Adrian is the ideal partner.",
-    name: "Michael Johnson",
-    title: "Director of AlphaStream Technologies",
-  },
-  {
-    quote:
-      "Collaborating with Adrian was an absolute pleasure. His professionalism, promptness, and dedication to delivering exceptional results were evident throughout our project. Adrian's enthusiasm for every facet of development truly stands out. If you're seeking to elevate your website and elevate your brand, Adrian is the ideal partner.",
-    name: "Michael Johnson",
-    title: "Director of AlphaStream Technologies",
-  },
-  {
-    quote:
-      "Collaborating with Adrian was an absolute pleasure. His professionalism, promptness, and dedication to delivering exceptional results were evident throughout our project. Adrian's enthusiasm for every facet of development truly stands out. If you're seeking to elevate your website and elevate your brand, Adrian is the ideal partner.",
-    name: "Michael Johnson",
-    title: "Director of AlphaStream Technologies",
-  },
-  {
-    quote:
-      "Collaborating with Adrian was an absolute pleasure. His professionalism, promptness, and dedication to delivering exceptional results were evident throughout our project. Adrian's enthusiasm for every facet of development truly stands out. If you're seeking to elevate your website and elevate your brand, Adrian is the ideal partner.",
-    name: "Michael Johnson",
-    title: "Director of AlphaStream Technologies",
-  },
-  {
-    quote:
-      "Collaborating with Adrian was an absolute pleasure. His professionalism, promptness, and dedication to delivering exceptional results were evident throughout our project. Adrian's enthusiasm for every facet of development truly stands out. If you're seeking to elevate your website and elevate your brand, Adrian is the ideal partner.",
-    name: "Michael Johnson",
-    title: "Director of AlphaStream Technologies",
-  },
-];
-
-export const companies = [
+export const testimonial = [
   {
     id: 1,
-    name: "cloudinary",
-    img: "/cloud.svg",
-    nameImg: "/cloudName.svg",
+    name: "/svgs/appwriteio-ar21.svg",
   },
+
   {
     id: 2,
-    name: "appwrite",
-    img: "/app.svg",
-    nameImg: "/appName.svg",
+    name: "/svgs/amazon_aws-ar21.svg",
   },
-  {
-    id: 3,
-    name: "HOSTINGER",
-    img: "/host.svg",
-    nameImg: "/hostName.svg",
-  },
+
   {
     id: 4,
-    name: "stream",
-    img: "/s.svg",
-    nameImg: "/streamName.svg",
+    name: "/svgs/mongodb-ar21.svg",
   },
   {
     id: 5,
-    name: "docker.",
-    img: "/dock.svg",
-    nameImg: "/dockerName.svg",
+    name: "/svgs/nextjs-ar21.svg",
+  },
+  {
+    id: 6,
+    name: "/svgs/nodejs-ar21.svg",
+  },
+  {
+    id: 7,
+    name: "/svgs/docker-ar21.svg",
+  },
+  {
+    id: 6,
+    name: "/svgs/javascript-ar21.svg",
+  },
+  {
+    id: 7,
+    name: "/svgs/reactjs-ar21.svg",
+  },
+  {
+    id: 8,
+    name: "/svgs/getbootstrap-ar21.svg",
+  },
+  {
+    id: 9,
+    name: "/svgs/microsoft_azure-ar21.svg",
+  },
+  {
+    id: 10,
+    name: "/svgs/github-ar21.svg",
+  },
+  {
+    id: 11,
+    name: "/svgs/c-programming.svg",
   },
 ];
+
+export const testimonial1 = [
+  {
+    id: 1,
+    name: "/svgs/tailwindcss-ar21.svg",
+  },
+
+  {
+    id: 2,
+    name: "/svgs/netlify-ar21.svg",
+  },
+
+  {
+    id: 4,
+    name: "/svgs/typescriptlang-ar21.svg",
+  },
+  {
+    id: 5,
+    name: "/svgs/python-ar21.svg",
+  },
+  {
+    id: 6,
+    name: "/svgs/w3_html5-ar21.svg",
+  },
+  {
+    id: 7,
+    name: "/svgs/expressjs-ar21.svg",
+  },
+  {
+    id: 8,
+    name: "/svgs/npmjs-ar21.svg",
+  },
+  {
+    id: 9,
+    name: "/svgs/netlifyapp_watercss-ar21.svg",
+  },
+  {
+    id: 10,
+    name: "/svgs/arduino-ar21.svg",
+  },
+  {
+    id: 11,
+    name: "/svgs/sentryio-ar21.svg",
+  },
+];
+
 
 export const workExperience = [
   {
     id: 1,
-    title: "Frontend Engineer Intern",
-    desc: "Assisted in the development of a web-based platform using React.js, enhancing interactivity.",
+    title: "MERN Stack Developer",
+    desc: "Proficient in building scalable web applications with MongoDB, Express.js, React.js, and Node.js.",
     className: "md:col-span-2",
     thumbnail: "/exp1.svg",
   },
   {
     id: 2,
-    title: "Mobile App Dev - JSM Tech",
-    desc: "Designed and developed mobile app for both iOS & Android platforms using React Native.",
+    title: "Frontend and Mobile Specialist",
+    desc: "Experienced in crafting dynamic UIs, animations with React.js, Three.js, GSAP, and building cross-platform mobile apps with React Native.",
     className: "md:col-span-2", // change to md:col-span-2
     thumbnail: "/exp2.svg",
   },
   {
     id: 3,
-    title: "Freelance App Dev Project",
-    desc: "Led the dev of a mobile app for a client, from initial concept to deployment on app stores.",
+    title: "IoT Solutions Developer",
+    desc: "Skilled in creating secure and innovative IoT solutions using Azure IoT Hub, AWS, and cloud technologies.",
     className: "md:col-span-2", // change to md:col-span-2
     thumbnail: "/exp3.svg",
   },
   {
     id: 4,
-    title: "Lead Frontend Developer",
-    desc: "Developed and maintained user-facing features using modern frontend technologies.",
+    title: "Cloud and IoT Innovator",
+    desc: "Combining cloud, AIML, IoT, Edge Computing, and React Native to develop cutting-edge solutions for real-world problems.",
     className: "md:col-span-2",
     thumbnail: "/exp4.svg",
   },
@@ -231,14 +264,12 @@ export const workExperience = [
 export const socialMedia = [
   {
     id: 1,
-    img: "/git.svg",
+    img: "/link.svg",
+    link: "https://www.linkedin.com/in/aravind-s-90g/",
   },
   {
     id: 2,
-    img: "/twit.svg",
-  },
-  {
-    id: 3,
-    img: "/link.svg",
+    img: "/git.svg",
+    link: "https://github.com/aravinds90g?tab=repositories",
   },
 ];
