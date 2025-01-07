@@ -31,7 +31,7 @@ const Hero = () => {
         <div className="flex  relative justify-center   ">
           <div className="max-[89vw]">
             <h2 className="text-3xl text-center uppercase tracking-widest ">
-              Hi I'm Aravind, A Developer
+              Hi I{`'`}m Aravind, A Developer
             </h2>
             <TextGenerateEffect
               className="text-center max-w-[900px] text-3xl sm:text-3xl md:text-4xl lg:text-6xl font-semibold"

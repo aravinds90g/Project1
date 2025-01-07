@@ -1,11 +1,11 @@
-import { i, style, svg } from "framer-motion/client";
 
-export const navItems = [
-  { name: "About", link: "#about" },
-  { name: "Projects", link: "#projects" },
-  { name: "Testimonials", link: "#testimonials" },
-  { name: "Contact", link: "#contact" },
-];
+
+// export const navItems = [
+//   { name: "About", link: "#about" },
+//   { name: "Projects", link: "#projects" },
+//   { name: "Testimonials", link: "#testimonials" },
+//   { name: "Contact", link: "#contact" },
+// ];
 
 export const gridItems = [
   {
@@ -181,7 +181,8 @@ export const testimonial = [
   {
     id: 11,
     name: "/svgs/c-programming.svg",
-  },
+    style: "ml-28",
+  }
 ];
 
 export const testimonial1 = [

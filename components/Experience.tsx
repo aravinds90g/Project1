@@ -1,6 +1,7 @@
 import React from 'react'
 import { Button } from './ui/MovingBorder'
 import { workExperience } from '@/data'
+// import Image from 'next/image';
 
 
 const Experience = () => {
@@ -23,6 +24,7 @@ const Experience = () => {
                   className="pl-3 mt-1"
                   src={card.thumbnail}
                   alt={card.title}
+                  
                 />
               </div>
               <h1 className="text-start text-xl px-4 mt-3 font-bold flex-col ">

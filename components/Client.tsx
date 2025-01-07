@@ -6,7 +6,7 @@ const Client = () => {
   return (
     <div className="py-4 mt-0 relative" id="projects">
       <h1 className="text-6xl text-center mb-10 font-semibold">
-        Tech Stacks I'm {""}
+        Tech Stacks I{`'`}m {""}
         <span className="text-purple">Exploring</span>
       </h1>
       <div className="flex flex-col items-center justify-center  ">

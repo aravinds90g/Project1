@@ -8,8 +8,8 @@ import Grid from "@/components/Grid";
 import Hero from "@/components/Hero";
 import RecentProject from "@/components/RecentProject";
 
-import { navItems } from "@/data";
-import { FaHome } from "react-icons/fa";
+// import { navItems } from "@/data";
+// import { FaHome } from "react-icons/fa";
 
 
 

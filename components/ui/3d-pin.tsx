@@ -32,7 +32,7 @@ export const PinContainer = ({
 
   useEffect(() => {
     // This runs only on the client
-    const width = window.innerWidth;
+    // const width = window.innerWidth;
   }, []);
 
 

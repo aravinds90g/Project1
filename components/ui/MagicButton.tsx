@@ -1,6 +1,6 @@
 'use client'
 import React from "react";
-import { useState } from "react";
+// import { useState } from "react";
 const MagicButton = ({
   title,
   icon,
@@ -8,11 +8,11 @@ const MagicButton = ({
   handleClick,
   otherClasses
 }: {
-  title?: String;
+  title?: string;
   icon?: React.ReactNode;
-  position?: String;
+  position?: string;
   handleClick?: () => void;
-  otherClasses?:String
+  otherClasses?:string
 }) => {
   return (
     <div className={`text-center mt-4 ${otherClasses}`}>

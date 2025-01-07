@@ -1,8 +1,9 @@
-import { footer } from 'framer-motion/client'
+// import { footer } from 'framer-motion/client'
 import React from 'react'
 import MagicButton from './ui/MagicButton';
 import { FaLocationArrow } from 'react-icons/fa';
 import { socialMedia } from '@/data';
+// import Image from 'next/image';
 
 const Footer = () => {
   return (

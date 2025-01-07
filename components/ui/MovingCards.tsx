@@ -1,6 +1,7 @@
 "use client";
 
 import { cn } from "@/lib/utils";
+// import Image from "next/image";
 import React, { useEffect, useState } from "react";
 
 export const InfiniteMovingCards = ({
@@ -11,8 +12,9 @@ export const InfiniteMovingCards = ({
   className,
 }: {
   items: {
-    id: Number;
+    id: number;
     name: string;
+    style?:string;
   }[];
   direction?: "left" | "right";
   speed?: "fast" | "normal" | "slow";
@@ -118,7 +120,7 @@ export const InfiniteMovingCards = ({
             </blockquote> */}
 
             <div className="justify-center flex items-center">
-              <img src={item.name} alt="/" />
+              <img  src={item.name}  alt="img" className={item.style} />
             </div>
           </li>
         ))}

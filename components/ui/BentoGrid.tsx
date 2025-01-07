@@ -7,6 +7,7 @@ import animationData from "@/data/conffite.json"
 import Lottie from "react-lottie";
 import MagicButton from "./MagicButton";
 import { IoCopyOutline } from "react-icons/io5";
+// import Image from "next/image";
 export const BentoGrid = ({
   className,
   children,
@@ -51,7 +52,6 @@ export const BentoGridItem = ({
 const [copied, setCopied] = useState(false);
 
 const handleCopy = () => {
- console.log('Eamil')
  navigator.clipboard.writeText('aravinds90g@gmail.com');
  setCopied(true)
 };
@@ -89,6 +89,7 @@ const handleCopy = () => {
              <img
                src={spareImge}
                alt={spareImge}
+               
                className="object-center object-cover w-full h-full"
              />
            )}
@@ -127,20 +128,20 @@ const handleCopy = () => {
                {["React.js", "Next.js", "TypeScript"].map((item) => (
                  <span
                    key={item}
-                   className="py-2 lg:py-4 lg:px-3 opacity-50 text-sm lg:text-background lg:opacity-100 rounded-xl bg-[#10132E] text-center"
+                   className="py-2 lg:py-4 lg:px-3 opacity-50 text-sm lg:text-background lg:opacity-100 rounded-xl font-bold bg-white-100  text-center"
                  >
                    {item}
                  </span>
                ))}
-               <span className="lg:py-4 lg:px-3 py-4 rounded-xl text-center bg-[#10132E]" />
+               <span className="lg:py-4 lg:px-2 py-4 rounded-xl text-center bg-white-100" />
              </div>
 
              <div className="flex ml-5 flex-col gap-3 lg:gap-8">
-               <span className="lg:py-4 lg:px-3 py-4 rounded-xl text-center bg-[#10132E]" />
+               <span className="lg:py-4 lg:px-3 py-4 rounded-xl text-center bg-white-100" />
                {["Node.js", "G-Sap", "Mongodb"].map((item) => (
                  <span
                    key={item}
-                   className="py-2 lg:py-4 lg:px-3 opacity-50 text-sm lg:text-background lg:opacity-100 rounded-xl bg-[#10132E] text-center"
+                   className="py-2 lg:py-4 lg:px-3 opacity-50 text-sm lg:text-background lg:opacity-100 rounded-xl bg-white-100 font-bold text-center"
                  >
                    {item}
                  </span>
