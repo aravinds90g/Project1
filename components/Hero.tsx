@@ -14,10 +14,6 @@ const Hero = () => {
           fill="white"
         />
         <Spotlight
-          className="h-[80vh] w-[20vw] top-40 left-[90rem]"
-          fill="red"
-        />
-        <Spotlight
           className="left-96 top-28 h-[80vh] w-[50vw]rotate-90"
           fill="blue"
         />
