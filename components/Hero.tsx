@@ -1,20 +1,30 @@
-import React from 'react'
-import { Spotlight } from './ui/Spotlight'
-import { TextGenerateEffect } from './ui/TextGenerateEffect';
-import MagicButton from './ui/MagicButton';
+import React from "react";
+import { Spotlight } from "./ui/Spotlight";
+import { TextGenerateEffect } from "./ui/TextGenerateEffect";
+import MagicButton from "./ui/MagicButton";
 import { MdArrowOutward } from "react-icons/md";
-
 
 const Hero = () => {
   return (
-    <div id='#about' className="pb-20 pt-36 ">
+    <div id="#about" className="pb-20 pt-36 ">
       <div>
         <Spotlight
-          className="-top-40 -left-10 md:-left-32 md:-top-20  h-screen"
+          className="-top-40 -left-10 md:-left-32 md:-top-20 h-screen"
           fill="white"
         />
+        {/* Original purple */}
         <Spotlight
-          className="left-96 top-28 h-[80vh] w-[50vw]rotate-90"
+          className="left-96 top-28 h-[80vh] w-[50vw] rotate-12"
+          fill="purple"
+        />
+        {/* Mirrored purple in opposite direction */}
+        <Spotlight
+          className="-right-96 top-28 h-[80vh] w-[50vw] -rotate-12"
+          fill="pink"
+        />
+        {/* Blue spotlight stays as is */}
+        <Spotlight
+          className="-right-1/2 top-28 h-[80vh] w-[50vw]"
           fill="blue"
         />
       </div>
@@ -40,24 +50,21 @@ const Hero = () => {
             <p className="text-center">
               Building the Future with Web3, IoT, and Cloud Technologies
             </p>
-            <div className='mt-10'>
-    
-            <a
-              href="https://www.linkedin.com/in/aravind-s-90g/"
-              >
-              <MagicButton
-               otherClasses={`mt-10`}
-               title="Want to see my work "
-               position="right"
-               icon={<MdArrowOutward />}
-               />
-            </a>
-               </div>
+            <div className="mt-10">
+              <a href="https://www.linkedin.com/in/aravind-s-90g/">
+                <MagicButton
+                  otherClasses={`mt-10`}
+                  title="Want to see my work "
+                  position="right"
+                  icon={<MdArrowOutward />}
+                />
+              </a>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  ); 
-}
+  );
+};
 
-export default Hero
+export default Hero;
