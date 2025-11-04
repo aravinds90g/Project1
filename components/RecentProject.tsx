@@ -1,5 +1,5 @@
 'use client'
-import { Project3d, projects } from '@/data'
+import { Project3d } from '@/data'
 import React from 'react'
 // import { AnimatedPinDemo } from './ui/Pincontainer'
 import { PinContainer } from './ui/3d-pin';
@@ -24,54 +24,7 @@ const RecentProject = () => {
           A Snapshot of {""}
           <span className="text-purple">My Latest Work</span>
         </h1>
-        <div className="flex  flex-wrap items-center justify-center p-7 gap-x-52 gap-y-10  gap-16 mt-32">
-          {projects.map(({ id, title, des, img, iconLists, link }) => (
-            <div
-              key={id}
-              className="lg:min-h-[32.5rem] h-[25rem] items-center justify-center sm:w-1/3 mt-36 w-[80vh]"
-            >
-              <div suppressHydrationWarning={true}>
-                <PinContainer title={link} href={link}>
-                  <div className="flex basis-full flex-col p-4 tracking-tight  text-slate-100/50 sm:basis-1/2 w-[20rem] lg:w-[30rem] h-[20rem] ">
-                    <a href={link}>
-                      <h3 className="max-w-xs !pb-2 !m-0 font-bold  text-base text-slate-100">
-                        {title}
-                      </h3>
-                      <div className="text-base !m-0 !p-0 font-normal">
-                        <span className="text-slate-500 ">{des}</span>
-                      </div>
-                      <div className="flex flex-1 w-full rounded-lg mt-4">
-                        <img src={img} alt={title}  />
-                      </div>
-                    </a>
-                  </div>
-                  <div className="flex mt-28 mb-3">
-                    <div className="flex items-center justify-center">
-                      {iconLists.map((icon) => (
-                        <div
-                          key={icon}
-                          className=" bg-black-100 flex items-center justify-center rounded-full border-2 border-white-100/[0.2]"
-                        >
-                          <img
-                            src={icon}
-                            alt={icon}
-                          />
-                        </div>
-                      ))}
-                    </div>
-                    <a href={link}>
-                      <div className="flex text-purple items-center justify-center text-center lg:ml-48 ml-10 ">
-                        <p>Check Live Site</p>
-                        <FaLocationArrow className="ms-3" color="#c1c1c1" />
-                      </div>
-                    </a>
-                  </div>
-                </PinContainer>
-              </div>
-            </div>
-          ))}
-        </div>
-
+      
         <div className="flex  flex-wrap items-center justify-center p-7 gap-x-20 gap-y-10  gap-16">
           {Project3d.map(({id, title, des, img, iconLists, link }) => (
             <CardContainer key={id} className="inter-var">

@@ -92,24 +92,6 @@ export const gridItems = [
   },
 ];
 
-export const projects = [
-  {
-    id: 1,
-    title: "ChatBot",
-    des: "An intelligent chatbot website with seamless user interaction, built using the MERN stack for real-time communication and advanced functionality.",
-    img: "img4.png",
-    iconLists: ["/next.svg", "/tail.svg", "/ts.svg", "/py.svg"],
-    link: "https://github.com/aravinds90g/ChatBot",
-  },
-  {
-    id: 2,
-    title: "Yoom - Video Conferencing App",
-    des: "A React Native project for building cross-platform mobile applications with seamless UI, robust features, and performant functionality.",
-    img: "/img5.png",
-    iconLists: ["/re.svg", "/tail.svg", "/ts.svg", "/Appwrite1.svg"],
-    link: "https://github.com/aravinds90g/app",
-  },
-];
 
 
 export const Project3d = [
@@ -117,19 +99,52 @@ export const Project3d = [
     id: 1,
     title: "Mini-Amazon: E-Commerce Platform",
     des: "A MERN stack e-commerce app with user authentication, product browsing, cart management, and secure checkout.",
-    img: "/project1.png",
+    img: "/e-commerce.png",
     iconLists: ["/re.svg", "/Nodejs.svg", "/Bootstrap.svg", "/Mongodb.svg"],
     link: "https://github.com/aravinds90g/mini-amazon",
   },
   {
     id: 2,
-    title: "Animated Apple Iphone 3D Website",
-    des: "Recreated the Apple iPhone 15 Pro website, combining GSAP animations and Three.js 3D effects..",
+    title: "Animated Apple iPhone 3D Website",
+    des: "Recreated the Apple iPhone 15 Pro website using Next.js, Three.js, and GSAP to achieve smooth animations and realistic 3D visuals.",
     img: "/project2.png",
     iconLists: ["/next.svg", "/tail.svg", "/three.svg", "/gsap.svg"],
     link: "https://github.com/aravinds90g/applewebsite",
   },
+  {
+    id: 3,
+    title: "ChatBot",
+    des: "An intelligent chatbot website built using the MERN stack with real-time communication, advanced AI features, and a clean responsive UI.",
+    img: "/img4.png",
+    iconLists: ["/next.svg", "/tail.svg", "/ts.svg", "/py.svg"],
+    link: "https://github.com/aravinds90g/ChatBot",
+  },
+  {
+    id: 4,
+    title: "Yoom - Video Conferencing App",
+    des: "A React Native app enabling high-quality video conferencing with Appwrite backend, cross-platform compatibility, and modern design.",
+    img: "/transaction_tracking.jpg",
+    iconLists: ["/re.svg", "/tail.svg", "/ts.svg", "/Appwrite1.svg"],
+    link: "https://github.com/aravinds90g/app",
+  },
+  {
+    id: 5,
+    title: "Hospital Food Delivery Management System",
+    des: "A full-stack web application that manages and automates food delivery inside hospitals using Node.js, Express.js, and MongoDB. It ensures timely and accurate meal delivery for patients with admin and staff dashboards.",
+    img: "/food-management.jpg",
+    iconLists: ["/Nodejs.svg", "/re.svg", "/Mongodb.svg", "/tail.svg"],
+    link: "https://github.com/aravinds90g/hospital-food-delivery",
+  },
+  {
+    id: 6,
+    title: "Gate Pass App",
+    des: "A React Native app designed to digitalize the gate pass process in colleges using QR code verification and MongoDB. It simplifies approvals from mentors and principals with real-time tracking.",
+    img: "/gatepass.png",
+    iconLists: ["/re.svg", "/tail.svg", "/MongoDB.svg", "/ts.svg"],
+    link: "https://github.com/aravinds90g/gate-pass-app",
+  },
 ];
+
 
 export const testimonial = [
   {
