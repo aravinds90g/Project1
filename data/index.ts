@@ -1,5 +1,3 @@
-
-
 // export const navItems = [
 //   { name: "About", link: "#about" },
 //   { name: "Projects", link: "#projects" },
@@ -92,8 +90,6 @@ export const gridItems = [
   },
 ];
 
-
-
 export const Project3d = [
   {
     id: 1,
@@ -108,24 +104,24 @@ export const Project3d = [
     title: "Animated Apple iPhone 3D Website",
     des: "Recreated the Apple iPhone 15 Pro website using Next.js, Three.js, and GSAP to achieve smooth animations and realistic 3D visuals.",
     img: "/project2.png",
-    iconLists: ["/next.svg", "/tail.svg", "/three.svg", "/gsap.svg"],
+    iconLists: ["/re.svg", "/tail.svg", "/three.svg", "/gsap.svg"],
     link: "https://github.com/aravinds90g/applewebsite",
   },
   {
     id: 3,
     title: "ChatBot",
     des: "An intelligent chatbot website built using the MERN stack with real-time communication, advanced AI features, and a clean responsive UI.",
-    img: "/img4.png",
+    img: "/chatbot.png",
     iconLists: ["/next.svg", "/tail.svg", "/ts.svg", "/py.svg"],
     link: "https://github.com/aravinds90g/ChatBot",
   },
   {
     id: 4,
-    title: "Yoom - Video Conferencing App",
-    des: "A React Native app enabling high-quality video conferencing with Appwrite backend, cross-platform compatibility, and modern design.",
+    title: "Transaction Tracker App",
+    des: "A React Native app for tracking daily expenses and income with charts, secure storage, and a clean modern UI.",
     img: "/transaction_tracking.jpg",
-    iconLists: ["/re.svg", "/tail.svg", "/ts.svg", "/Appwrite1.svg"],
-    link: "https://github.com/aravinds90g/app",
+    iconLists: ["/next.svg", "/tail.svg", "/ts.svg", "/Mongodb.svg"],
+    link: "https://github.com/aravinds90g/Transaction-Tracking",
   },
   {
     id: 5,
@@ -140,18 +136,13 @@ export const Project3d = [
     title: "Gate Pass App",
     des: "A React Native app designed to digitalize the gate pass process in colleges using QR code verification and MongoDB. It simplifies approvals from mentors and principals with real-time tracking.",
     img: "/gatepass.png",
-    iconLists: ["/re.svg", "/tail.svg", "/MongoDB.svg", "/ts.svg"],
+    iconLists: ["/re.svg", "/tail.svg", "/Mongodb.svg", "/ts.svg"],
     link: "https://github.com/aravinds90g/gate-pass-app",
   },
 ];
 
-
 export const testimonial = [
-  {
-    id: 1,
-    name: "/svgs/appwriteio-ar21.svg",
-  },
-
+  
   {
     id: 2,
     name: "/svgs/amazon_aws-ar21.svg",
@@ -197,7 +188,9 @@ export const testimonial = [
     id: 11,
     name: "/svgs/c-programming.svg",
     style: "ml-28",
-  }
+  },
+
+  
 ];
 
 export const testimonial1 = [
@@ -237,19 +230,23 @@ export const testimonial1 = [
   },
   {
     id: 10,
-    name: "/svgs/arduino-ar21.svg",
+    name: "/java.svg",
   },
   {
-    id: 11,
-    name: "/svgs/sentryio-ar21.svg",
+    id:11,
+    name:"/expo.svg",
   },
+   {
+   id:12,
+   name:"/postgresql.svg"
+   }
+  
 ];
-
 
 export const workExperience = [
   {
     id: 1,
-    title: "MERN Stack Developer",
+    title: "Full Stack Developer",
     desc: "Proficient in building scalable web applications with MongoDB, Express.js, React.js, and Node.js.",
     className: "md:col-span-2",
     thumbnail: "/exp1.svg",
@@ -263,8 +260,9 @@ export const workExperience = [
   },
   {
     id: 3,
-    title: "IoT Solutions Developer",
-    desc: "Skilled in creating secure and innovative IoT solutions using Azure IoT Hub, AWS, and cloud technologies.",
+    title: "DevOps Engineer",
+    desc: "Automates CI/CD pipelines and manages scalable cloud deployments using Docker, Kubernetes, and GitHub Actions.",
+
     className: "md:col-span-2", // change to md:col-span-2
     thumbnail: "/exp3.svg",
   },

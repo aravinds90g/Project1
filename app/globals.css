@@ -53,6 +53,12 @@ body {
     --chart-5: 27 87% 67%;
     --radius: 0.5rem
   }
+
+.glow-text {
+  -webkit-text-stroke: 1px #00eaff; /* border color */
+  color: transparent; /* makes fill transparent */
+  /* text-shadow: 0 0 10px #00eaff, 0 0 20px #00eaff, 0 0 40px #00eaff; */
+}
   .dark {
     --background: 0 0% 3.9%;
     --foreground: 0 0% 98%;

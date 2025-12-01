@@ -3,6 +3,7 @@ import React from 'react'
 import MagicButton from './ui/MagicButton';
 import { FaLocationArrow } from 'react-icons/fa';
 import { socialMedia } from '@/data';
+import { autiowide } from '@/app/fonts';
 // import Image from 'next/image';
 
 const Footer = () => {
@@ -12,9 +13,9 @@ const Footer = () => {
         <img src="/footer-grid.svg" className="h-full w-full opacity-75" />
       </div>
       <div className="py-4 mb-10 flex flex-col">
-        <h1 className="text-6xl text-center mb-0 font-semibold">
+        <h1 className={`text-6xl glow-text text-center mb-0 font-semibold ${autiowide.className}`}>
           Ready to take {""}
-          <span className="text-purple">your digital presence</span> to next
+          <span className="text-cyan-200">your digital presence</span> to next
           level?
         </h1>
         <p className="text-xl mt-10 mb-8 text-center ">

@@ -15,6 +15,14 @@ import { ThemeProvider } from "next-themes";
 //   weight: "100 900",
 // });
 
+import { Antonio } from "next/font/google";
+
+const antonio = Antonio({
+  subsets: ["latin"],
+  weight: ["300", "400", "600", "700"],
+});
+
+
 export const metadata: Metadata = {
   title: "Aravind Portfolio",
   description: "Morden Portofolio For Aravind S",
@@ -26,7 +34,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" >
       <body>
         <ThemeProvider
           attribute="class"

@@ -1,6 +1,7 @@
 import React from "react";
 import { Button } from "./ui/MovingBorder";
 import { workExperience } from "@/data";
+import { autiowide } from "@/app/fonts";
 
 const Experience = () => {
   return (
@@ -14,8 +15,8 @@ const Experience = () => {
         <div className="absolute pointer-events-none inset-0 flex items-center justify-center dark:bg-black bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]"></div>
       </div>
       {/* === TITLE === */}
-      <h1 className="text-5xl md:text-6xl text-center mb-16 font-semibold z-10">
-        Work <span className="text-purple">Highlights</span>
+      <h1 className={`text-7xl glow-text md:text-6xl text-center mb-16 font-semibold z-10 ${autiowide.className}`}>
+        Work <span className={`text-cyan-500 drop-shadow-[0_0_20px_rgba(34,211,238,0.8)]`}>Highlights</span>
       </h1>
 
       {/* === EXPERIENCE GRID === */}

@@ -1,122 +1,229 @@
 "use client";
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import { FC, SVGProps } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import { CanvasRevealEffect } from "@/components/ui/CanvasEffect";
 
 const Approch = () => {
+  const sectionRef = useRef<HTMLDivElement>(null);
+  const titleRef = useRef<HTMLHeadingElement>(null);
+  const cardsContainerRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const observerOptions = {
+      threshold: 0.2,
+      rootMargin: "0px"
+    };
+
+    const titleObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("animate-title-in");
+        }
+      });
+    }, observerOptions);
+
+    const cardsObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const cards = entry.target.children;
+          Array.from(cards).forEach((card, index) => {
+            setTimeout(() => {
+              card.classList.add("animate-card-in");
+            }, index * 200);
+          });
+        }
+      });
+    }, observerOptions);
+
+    if (titleRef.current) titleObserver.observe(titleRef.current);
+    if (cardsContainerRef.current) cardsObserver.observe(cardsContainerRef.current);
+
+    return () => {
+      titleObserver.disconnect();
+      cardsObserver.disconnect();
+    };
+  }, []);
+
   return (
-    <section className="py-20">
-      <h1 className="text-6xl text-center mt-10 font-semibold">
-        My Problem-Solving {""}
-        <span className="text-purple">Approch</span>
+    <section ref={sectionRef} className="py-20 bg-black text-white overflow-hidden">
+      <style jsx>{`
+        @keyframes titleSlideUp {
+          from {
+            opacity: 0;
+            transform: translateY(100px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+
+        @keyframes cardReveal {
+          from {
+            opacity: 0;
+            transform: translateY(150px) scale(0.8) rotateY(45deg);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0) scale(1) rotateY(0deg);
+          }
+        }
+
+        @keyframes float {
+          0%, 100% {
+            transform: translateY(0);
+          }
+          50% {
+            transform: translateY(-15px);
+          }
+        }
+
+        .animate-title-in {
+          animation: titleSlideUp 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+
+        .animate-card-in {
+          animation: cardReveal 1.4s cubic-bezier(0.34, 1.56, 0.64, 1) forwards,
+                     float 3s ease-in-out 1.5s infinite;
+        }
+
+        h1:not(.animate-title-in) {
+          opacity: 0;
+          transform: translateY(100px);
+        }
+
+        .card-wrapper:not(.animate-card-in) {
+          opacity: 0;
+          transform: translateY(150px) scale(0.8);
+        }
+
+        .glow-text {
+          text-shadow: 0 0 40px rgba(34, 211, 238, 0.4);
+        }
+      `}</style>
+
+      {/* Title */}
+      <h1
+        ref={titleRef}
+        className="text-6xl md:text-7xl glow-text text-center mt-10 font-semibold tracking-tight"
+      >
+        My Problem-Solving{" "}
+        <span className="text-cyan-400 drop-shadow-[0_0_20px_rgba(34,211,238,0.8)]">
+          Approach
+        </span>
       </h1>
 
-      <div className="py-20 flex flex-col lg:flex-row items-center justify-center gap-4">
-        <Card
-          title="Planning & Strategy"
-          description="We begin by understanding your vision and goals, mapping out your website or app's structure, target audience, and features. This stage lays the foundation for a clear, actionable plan that guides the entire project."
-          icon={<AceternityIcon order="Phase 1" />}
-        >
-          <CanvasRevealEffect
-            animationSpeed={5.1}
-            containerClassName="bg-emerald-900"
+      {/* Cards Grid */}
+      <div
+        ref={cardsContainerRef}
+        className="py-20 flex flex-col lg:flex-row items-center justify-center gap-8 lg:gap-12 px-4"
+      >
+        <div className="card-wrapper">
+          <Card
+            title="Planning & Strategy"
+            description="We begin by understanding your vision and goals, mapping out your website or app's structure, target audience, and features. This stage lays the foundation for a clear, actionable plan that guides the entire project."
+            icon={<AceternityIcon order="Phase 1" />}
+            color="emerald"
           />
-        </Card>
-        <Card
-          title="Development & Iteration"
-          description={`As I start developing, I bring the blueprint to life, turning ideas into functional designs. With continuous feedback and adjustments, I refine every element to ensure a seamless and user-friendly experience.`}
-          icon={<AceternityIcon order="Phase 2" />}
-        >
-          <CanvasRevealEffect
-            animationSpeed={3}
-            containerClassName="bg-black"
-            colors={[
-              [236, 72, 153],
-              [232, 121, 249],
-            ]}
-            dotSize={2}
+        </div>
+
+        <div className="card-wrapper">
+          <Card
+            title="Development & Iteration"
+            description="As I start developing, I bring the blueprint to life, turning ideas into functional designs. With continuous feedback and adjustments, I refine every element to ensure a seamless and user-friendly experience."
+            icon={<AceternityIcon order="Phase 2" />}
+            color="purple"
           />
-          {/* Radial gradient for the cute fade */}
-          <div className="absolute inset-0 [mask-image:radial-gradient(400px_at_center,white,transparent)] bg-black/50 dark:bg-black/90" />
-        </Card>
-        <Card
-          title="Finalization & Delivery"
-          description={`The final stage is all about fine-tuning. I meticulously test every aspect, address any issues, and polish the product to ensure it's ready for launch, delivering quality and performance that exceed expectations.`}
-          icon={<AceternityIcon order="Phase 3" />}
-        >
-          <CanvasRevealEffect
-            animationSpeed={3}
-            containerClassName="bg-sky-600"
-            colors={[[125, 211, 252]]}
+        </div>
+
+        <div className="card-wrapper">
+          <Card
+            title="Finalization & Delivery"
+            description="The final stage is all about fine-tuning. I meticulously test every aspect, address any issues, and polish the product to ensure it's ready for launch, delivering quality and performance that exceed expectations."
+            icon={<AceternityIcon order="Phase 3" />}
+            color="sky"
           />
-        </Card>
+        </div>
       </div>
     </section>
   );
-}
+};
 
 const Card = ({
   title,
   icon,
-  children,
   description,
+  color,
 }: {
   title: string;
   icon: React.ReactNode;
-  children?: React.ReactNode;
-  description?:string
+  description?: string;
+  color: "emerald" | "purple" | "sky";
 }) => {
   const [hovered, setHovered] = React.useState(false);
+
+  const colorClasses = {
+    emerald: "from-emerald-500/20 to-cyan-500/20",
+    purple: "from-purple-500/20 to-pink-500/20",
+    sky: "from-sky-500/20 to-cyan-500/20"
+  };
+
   return (
     <div
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
-      className="border border-black/[0.2] group/canvas-card flex items-center justify-center dark:border-white/[0.2] h-[30rem] lg:h-[40rem]  max-w-sm w-full mx-auto p-4 relative "
+      className="border border-white/[0.15] group/canvas-card relative h-[30rem] lg:h-[40rem] max-w-sm w-full mx-auto rounded-3xl overflow-hidden backdrop-blur-sm bg-white/5 shadow-2xl transition-all duration-500 hover:shadow-cyan-500/20"
     >
-      <Icon className="absolute h-6 w-6 -top-3 -left-3 dark:text-white text-black" />
-      <Icon className="absolute h-6 w-6 -bottom-3 -left-3 dark:text-white text-black" />
-      <Icon className="absolute h-6 w-6 -top-3 -right-3 dark:text-white text-black" />
-      <Icon className="absolute h-6 w-6 -bottom-3 -right-3 dark:text-white text-black" />
+      {/* Corner Icons */}
+      <Icon className="absolute h-8 w-8 -top-4 -left-4 text-cyan-400 opacity-60" />
+      <Icon className="absolute h-8 w-8 -bottom-4 -left-4 text-purple-400 opacity-60" />
+      <Icon className="absolute h-8 w-8 -top-4 -right-4 text-pink-400 opacity-60" />
+      <Icon className="absolute h-8 w-8 -bottom-4 -right-4 text-emerald-400 opacity-60" />
 
+      {/* Canvas Reveal on Hover */}
       <AnimatePresence>
         {hovered && (
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            className="h-full w-full absolute inset-0"
+            exit={{ opacity: 0 }}
+            // className="h-full w-full absolute inset-0"
           >
-            {children}
+            <div className={`absolute inset-0 bg-gradient-to-br ${colorClasses[color]} rounded-3xl`}>
+              <div className="absolute inset-0 bg-black/40"></div>
+            </div>
           </motion.div>
         )}
       </AnimatePresence>
 
-      <div className="relative z-20">
-        <div className="text-center absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] group-hover/canvas-card:-translate-y-4 group-hover/canvas-card:opacity-0 transition duration-200 w-full  mx-auto flex items-center justify-center">
+      {/* Content */}
+      <div className="relative z-20 p-8 h-full flex flex-col justify-center items-center text-center">
+        <div className="mb-8 transition-all duration-500 group-hover/canvas-card:-translate-y-10 group-hover/canvas-card:scale-110">
           {icon}
         </div>
-        <h2 className="dark:text-white text-center text-3xl opacity-0 group-hover/canvas-card:opacity-100 relative z-14 text-black mt-4  font-bold group-hover/canvas-card:text-white group-hover/canvas-card:-translate-y-2 transition duration-200">
+
+        <h2 className="text-4xl font-bold text-white mb-4 opacity-0 group-hover/canvas-card:opacity-100 translate-y-8 group-hover/canvas-card:translate-y-0 transition-all duration-500">
           {title}
         </h2>
-        <h2 className="hover:text-purple text-center opacity-0 group-hover/canvas-card:opacity-100 relative z-10  text-lg mt-4  font-light group-hover/canvas-card:text-white group-hover/canvas-card:-translate-y-2 transition duration-200">
+
+        <p className="text-lg text-gray-300 max-w-xs opacity-0 group-hover/canvas-card:opacity-100 translate-y-8 group-hover/canvas-card:translate-y-0 transition-all duration-700 delay-100">
           {description}
-        </h2>
+        </p>
       </div>
     </div>
   );
 };
 
-const AceternityIcon = ({order}:{order?:string}) => {
+const AceternityIcon = ({ order }: { order?: string }) => {
   return (
-    <button className="bg-slate-800 no-underline py-6  group cursor-pointer relative shadow-2xl shadow-zinc-900 rounded-full p-px text-xs font-semibold leading-6  text-white inline-block">
-      <span className="absolute inset-0  py-6 overflow-hidden rounded-full">
-        <span className="absolute inset-0 py-6 rounded-full bg-[image:radial-gradient(75%_100%_at_50%_0%,rgba(56,189,248,0.6)_0%,rgba(56,189,248,0)_75%)] opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
-      </span>
-      <div className="relative flex py-6 space-x-2 items-center z-10 rounded-full bg-zinc-950  px-4 ring-1 ring-white/10 ">
-        <span className="text-3xl">{order}</span>
+    <div className="relative group">
+      <div className="absolute -inset-1 bg-gradient-to-r from-cyan-500 to-purple-600 rounded-full blur-lg group-hover:blur-xl transition duration-1000 opacity-70 group-hover:opacity-100"></div>
+      <div className="relative px-8 py-6 bg-black rounded-full ring-1 ring-white/10 shadow-2xl">
+        <span className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-purple-400">
+          {order}
+        </span>
       </div>
-      <span className="absolute -bottom-0 left-[1.125rem] h-px w-[calc(100%-2.25rem)] bg-gradient-to-r from-emerald-400/0 via-emerald-400/90 to-emerald-400/0 transition-opacity duration-500 group-hover:opacity-40" />
-    </button>
+    </div>
   );
 };
 
@@ -126,7 +233,7 @@ export const Icon: FC<SVGProps<SVGSVGElement>> = ({ className, ...rest }) => {
       xmlns="http://www.w3.org/2000/svg"
       fill="none"
       viewBox="0 0 24 24"
-      strokeWidth="1.5"
+      strokeWidth="2"
       stroke="currentColor"
       className={className}
       {...rest}
