@@ -1,0 +1,33 @@
+{
+  "extends": ["next/core-web-vitals", "next/typescript"],
+  "rules": {
+    // Suppress warnings for using <img> instead of <Image>
+    "@next/next/no-img-element": "off",
+
+    // Suppress missing alt attributes in <img> tags
+    "jsx-a11y/alt-text": "off",
+
+    // Allow unused variables with a warning instead of an error
+    "@typescript-eslint/no-unused-vars": [
+      "warn",
+      { "argsIgnorePattern": "^_" }
+    ],
+
+    // Allow using the `any` type
+    "@typescript-eslint/no-explicit-any": "off",
+
+    // Allow console statements with a warning
+    "no-console": "warn",
+
+    // Ignore unknown properties in JSX (e.g., 'args', 'object')
+    "react/no-unknown-property": "off",
+
+    // Suppress warnings for missing dependencies in useEffect
+    "react-hooks/exhaustive-deps": "off"
+  },
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  }
+}
