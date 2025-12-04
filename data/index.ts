@@ -97,7 +97,7 @@ export const Project3d = [
     des: "A MERN stack e-commerce app with user authentication, product browsing, cart management, and secure checkout.",
     img: "/e-commerce.png",
     iconLists: ["/re.svg", "/Nodejs.svg", "/Bootstrap.svg", "/Mongodb.svg"],
-    link: "https://github.com/aravinds90g/mini-amazon",
+    link: "https:/e-commerce-frontend-ten-steel.vercel.app/",
   },
   {
     id: 2,
@@ -105,7 +105,7 @@ export const Project3d = [
     des: "Recreated the Apple iPhone 15 Pro website using Next.js, Three.js, and GSAP to achieve smooth animations and realistic 3D visuals.",
     img: "/project2.png",
     iconLists: ["/re.svg", "/tail.svg", "/three.svg", "/gsap.svg"],
-    link: "https://github.com/aravinds90g/applewebsite",
+    link: "https://aravinds-90g-web.netlify.app/",
   },
   {
     id: 3,
@@ -129,7 +129,7 @@ export const Project3d = [
     des: "A full-stack web application that manages and automates food delivery inside hospitals using Node.js, Express.js, and MongoDB. It ensures timely and accurate meal delivery for patients with admin and staff dashboards.",
     img: "/food-management.jpg",
     iconLists: ["/Nodejs.svg", "/re.svg", "/Mongodb.svg", "/tail.svg"],
-    link: "https://github.com/aravinds90g/hospital-food-delivery",
+    link: "https://github.com/aravinds90g/hospital-food-management",
   },
   {
     id: 6,
