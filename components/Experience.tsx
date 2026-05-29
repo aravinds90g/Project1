@@ -90,6 +90,10 @@ export default function Experience() {
       ref={sectionRef}
       className="relative py-32 px-6 md:px-12"
     >
+      <div
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-40 pointer-events-none"
+        style={{ backgroundImage: "url(/portfolio-image-5.png)" }}
+      />
       <div className="max-w-[1400px] mx-auto">
         {/* Section header */}
         <div className="mb-20">
