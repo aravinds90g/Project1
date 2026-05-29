@@ -90,8 +90,12 @@ export default function About() {
     <section
       id="about"
       ref={sectionRef}
-      className="relative min-h-[100dvh] py-32 px-6 md:px-12"
+      className="relative min-h-[100dvh] py-32 px-6 md:px-12 overflow-hidden"
     >
+      <div
+        className="absolute inset-0 bg-cover bg-center opacity-[0.5] pointer-events-none"
+        style={{ backgroundImage: "url('/portfolio-image-4.png')" }}
+      />
       <div className="max-w-[1400px] mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24">
           {/* Left column - sticky */}

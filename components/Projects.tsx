@@ -121,7 +121,7 @@ export default function Projects() {
           <div className="relative h-full min-h-[100dvh] flex flex-col lg:flex-row">
             <div className="flex-1 flex flex-col justify-center px-6 md:px-12 lg:px-16 py-16 lg:py-0">
               <div className="relative">
-                <span className="absolute -top-20 -left-4 font-display text-[clamp(6rem,15vw,12rem)] font-bold text-white/[0.03] leading-none select-none pointer-events-none project-content">
+                <span className="absolute -top-20 -left-4 font-display text-[clamp(6rem,15vw,12rem)] font-bold text-white/10 leading-none select-none pointer-events-none project-content">
                   {project.number}
                 </span>
                 <span className="font-mono text-[10px] uppercase tracking-[0.3em] text-white/30 mb-4 block project-content">

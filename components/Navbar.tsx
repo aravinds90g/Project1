@@ -1,10 +1,6 @@
 "use client";
 
-import { useEffect, useRef } from "react";
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-
-gsap.registerPlugin(ScrollTrigger);
+import { useRef } from "react";
 
 const navLinks = [
   { label: "Home", href: "#hero" },
@@ -16,32 +12,6 @@ const navLinks = [
 
 export default function Navbar() {
   const navRef = useRef<HTMLElement>(null);
-  const bgRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const ctx = gsap.context(() => {
-      ScrollTrigger.create({
-        trigger: "#hero",
-        start: "bottom top",
-        onEnter: () => {
-          gsap.to(bgRef.current, {
-            opacity: 1,
-            duration: 0.4,
-            ease: "power2.out",
-          });
-        },
-        onLeaveBack: () => {
-          gsap.to(bgRef.current, {
-            opacity: 0,
-            duration: 0.4,
-            ease: "power2.out",
-          });
-        },
-      });
-    }, navRef);
-
-    return () => ctx.revert();
-  }, []);
 
   const handleClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
     e.preventDefault();
@@ -57,8 +27,7 @@ export default function Navbar() {
       className="fixed top-0 left-0 w-full z-[100] px-6 md:px-12 py-5"
     >
       <div
-        ref={bgRef}
-        className="absolute inset-0 bg-black/60 backdrop-blur-xl opacity-0 will-change-transform"
+        className="absolute inset-0  backdrop-blur-xl"
         style={{ borderBottom: "1px solid rgba(255,255,255,0.05)" }}
       />
       <div className="relative flex items-center justify-between">

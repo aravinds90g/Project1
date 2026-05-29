@@ -67,7 +67,7 @@ export default function Stats() {
     <section ref={sectionRef} className="relative py-24 px-6 md:px-12">
       {/* Top accent line */}
       <div className="max-w-[1400px] mx-auto mb-16">
-        <div className="h-[1px] bg-accent/30 w-full" />
+        <div className="h-[3px] bg-accent/30 w-full" />
       </div>
 
       <div className="max-w-[1400px] mx-auto">

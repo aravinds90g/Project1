@@ -41,7 +41,7 @@ export default function Home() {
       <Projects />
       <Marquee />
       <Experience />
-      <Testimonials />
+      <Testimonials />  
       <Stats />
       <Services />
       <Contact />
