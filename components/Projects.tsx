@@ -14,6 +14,7 @@ const projects = [
     description:
       "A real-world mobile application developed with React Native and MongoDB to simplify the college gate pass approval process, eliminating manual paperwork and physical signatures.",
     tags: ["React Native", "Expo", "MongoDB", "Node.js"],
+    github: "https://github.com/aravinds90g/Gate-Pass-App.git",
   },
   {
     number: "02",
@@ -25,19 +26,21 @@ const projects = [
   },
   {
     number: "03",
-    name: "EVENT PLATFORM",
-    image: "/event-platform.png",
+    name: "NAMMA IDEA SOLUTIONS",
+    image: "/project-3.png",
     description:
-      "A modern event management platform with real-time updates via WebSockets, user authentication, cloud image uploads, and a responsive UI.",
-    tags: ["React", "WebSockets", "Cloudinary", "Tailwind CSS"],
+      "A full-service startup website for Namma Idea Solutions — a Chennai-based agency offering web design, development, embedded systems, IoT, and AI/ML solutions.",
+    tags: ["Next.js", "Tailwind CSS", "Vercel", "Responsive Design"],
+    github: "https://namma-idea-solutions-website.vercel.app/",
   },
   {
     number: "04",
     name: "IPHONE 3D WEBSITE",
-    image: "/iphone-3d.png",
+    image: "/project-4.png",
     description:
       "A premium 3D animated web experience inspired by the Apple iPhone 15 Pro website, featuring 3D product visualization and smooth animations.",
     tags: ["Three.js", "GSAP", "Framer Motion", "React.js"],
+    github: "https://aravinds-90g-web.netlify.app/",
   },
 ];
 
@@ -143,19 +146,22 @@ export default function Projects() {
                     </span>
                   ))}
                 </div>
-                <a
-                  href="#"
-                  className="group inline-flex items-center gap-2 font-mono text-[11px] uppercase tracking-[0.2em] text-white/60 hover:text-accent transition-all duration-300 project-content"
-                  onClick={(e) => e.preventDefault()}
-                >
-                  <span className="relative">
-                    View Project
-                    <span className="absolute -bottom-1 left-0 w-full h-[1px] bg-white/20 group-hover:bg-accent group-hover:scale-x-110 transition-all duration-300 origin-left" />
-                  </span>
-                  <span className="group-hover:tracking-[0.3em] transition-all duration-300">
-                    →
-                  </span>
-                </a>
+                {project.github && (
+                  <a
+                    href={project.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group inline-flex items-center gap-2 font-mono text-[11px] uppercase tracking-[0.2em] text-white/60 hover:text-accent transition-all duration-300 project-content"
+                  >
+                    <span className="relative">
+                      View Project
+                      <span className="absolute -bottom-1 left-0 w-full h-[1px] bg-white/20 group-hover:bg-accent group-hover:scale-x-110 transition-all duration-300 origin-left" />
+                    </span>
+                    <span className="group-hover:tracking-[0.3em] transition-all duration-300">
+                      →
+                    </span>
+                  </a>
+                )}
               </div>
             </div>
             <div className="flex-1 relative overflow-hidden">
