@@ -1,12 +1,12 @@
 pipeline {
     agent any
 
-    tools {
-        nodejs 'NodeJS'
-    }
-
     environment {
         CI = 'true'
+        IMAGE_NAME = 'portfolio'
+        CONTAINER_NAME = 'portfolio-app'
+        HOST_PORT = '3000'
+        CONTAINER_PORT = '3000'
     }
 
     stages {
@@ -16,25 +16,27 @@ pipeline {
             }
         }
 
-        stage('Install Dependencies') {
+        stage('Docker Build') {
             steps {
-                sh 'npm ci'
+                sh "docker build -t ${IMAGE_NAME}:latest ."
             }
         }
 
-        stage('Build') {
-            steps {
-                sh 'npm run build'
-            }
-        }
-
-        stage('Start with PM2') {
+        stage('Docker Run') {
             steps {
                 sh '''
-                    npm install -g pm2
-                    pm2 delete portfolio 2>/dev/null || true
-                    pm2 start npm --name "portfolio" -- start
-                    pm2 save
+                    docker stop ${CONTAINER_NAME} 2>/dev/null || true
+                    docker rm ${CONTAINER_NAME} 2>/dev/null || true
+                    docker run -d --name ${CONTAINER_NAME} -p ${HOST_PORT}:${CONTAINER_PORT} ${IMAGE_NAME}:latest
+                '''
+            }
+        }
+
+        stage('Health Check') {
+            steps {
+                sh '''
+                    sleep 5
+                    curl --fail http://localhost:${HOST_PORT}
                 '''
             }
         }
@@ -42,7 +44,7 @@ pipeline {
 
     post {
         success {
-            echo 'Build and deployment completed successfully.'
+            echo 'Docker build and deployment completed successfully.'
         }
         failure {
             echo 'Pipeline failed.'
