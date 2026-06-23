@@ -7,8 +7,6 @@ pipeline {
 
     environment {
         CI = 'true'
-        IMAGE_NAME = 'aravinds90g/portfolio'
-        IMAGE_TAG = "${env.BUILD_NUMBER}"
     }
 
     stages {
@@ -30,28 +28,21 @@ pipeline {
             }
         }
 
-        stage('Docker Build') {
+        stage('Start with PM2') {
             steps {
-                sh "docker build -t ${IMAGE_NAME}:${IMAGE_TAG} -t ${IMAGE_NAME}:latest ."
-            }
-        }
-
-        stage('Docker Push') {
-            steps {
-                withCredentials([string(credentialsId: 'DOCKER_HUB_TOKEN', variable: 'DOCKER_TOKEN')]) {
-                    sh '''
-                        echo "$DOCKER_TOKEN" | docker login -u aravinds90g --password-stdin
-                        docker push ${IMAGE_NAME}:${IMAGE_TAG}
-                        docker push ${IMAGE_NAME}:latest
-                    '''
-                }
+                sh '''
+                    npm install -g pm2
+                    pm2 delete portfolio 2>/dev/null || true
+                    pm2 start npm --name "portfolio" -- start
+                    pm2 save
+                '''
             }
         }
     }
 
     post {
         success {
-            echo 'Build and Docker push completed successfully.'
+            echo 'Build and deployment completed successfully.'
         }
         failure {
             echo 'Pipeline failed.'
