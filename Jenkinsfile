@@ -30,7 +30,12 @@ pipeline {
 
         stage('Start') {
             steps {
-                sh 'npm run start'
+                sh '''
+                    npm run start &
+                    sleep 5
+                    curl --fail http://localhost:3000
+                    kill %1
+                '''
             }
         }
     }
