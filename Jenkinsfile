@@ -7,6 +7,8 @@ pipeline {
 
     environment {
         CI = 'true'
+        IMAGE_NAME = 'aravinds90g/portfolio'
+        IMAGE_TAG = "${env.BUILD_NUMBER}"
     }
 
     stages {
@@ -28,24 +30,31 @@ pipeline {
             }
         }
 
-        stage('Start') {
+        stage('Docker Build') {
             steps {
-                sh '''
-                    npm run start &
-                    sleep 5
-                    curl --fail http://localhost:3000
-                    kill %1
-                '''
+                sh "docker build -t ${IMAGE_NAME}:${IMAGE_TAG} -t ${IMAGE_NAME}:latest ."
+            }
+        }
+
+        stage('Docker Push') {
+            steps {
+                withCredentials([string(credentialsId: 'DOCKER_HUB_TOKEN', variable: 'DOCKER_TOKEN')]) {
+                    sh '''
+                        echo "$DOCKER_TOKEN" | docker login -u aravinds90g --password-stdin
+                        docker push ${IMAGE_NAME}:${IMAGE_TAG}
+                        docker push ${IMAGE_NAME}:latest
+                    '''
+                }
             }
         }
     }
 
     post {
         success {
-            echo 'Build completed successfully.'
+            echo 'Build and Docker push completed successfully.'
         }
         failure {
-            echo 'Build failed.'
+            echo 'Pipeline failed.'
         }
     }
 }
